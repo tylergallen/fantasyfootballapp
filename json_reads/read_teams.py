@@ -1,3 +1,5 @@
+from classes import team_class
+
 import requests
 import json
 
@@ -6,4 +8,4 @@ def json_read_teams(team_list):
 	r = requests.get(url)
 	json_teams = r.json()
 	for i in json_teams['NFLTeams']:
-		team_list.append(Team(i['code'], i['fullName'], i['shortName']))
+		team_list.append(team_class.Team(i['code'], i['fullName'], i['shortName']))

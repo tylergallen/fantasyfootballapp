@@ -1,3 +1,5 @@
+from classes import byeweek_class
+
 import requests
 import json
 
@@ -8,7 +10,14 @@ def json_read_byeweek(bye_week):
 	week = 5
 	while True:
 		for i in json_byeweek['Bye Week ' + str(week)]:
-			bye_week.append(byeWeek(i['team'], i['byeWeek'], i['displayName']))
+			bye_week.append(byeweek_class.byeWeek(i['team'], i['byeWeek'], i['displayName']))
 		week += 1
 		if week == 12:
 			break
+	return bye_week
+
+def main(bye_week):
+	json_read_byeweek(bye_week)
+
+if __name__ == "__main__":
+	main()

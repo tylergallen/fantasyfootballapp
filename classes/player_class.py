@@ -19,6 +19,9 @@ class Player:
 		Player.number_of_players += 1
 		if active == "1":
 			Player.number_of_active_players += 1
+
+	def add_bye_week(self, byeWeek):
+		self.byeWeek = byeWeek
 	
 	def display_number_of_active_players():
 		print (f'Total number of active players currently in the NFL: {number_of_active_players}')

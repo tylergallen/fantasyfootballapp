@@ -9,3 +9,4 @@ def json_read_teams(team_list):
 	json_teams = r.json()
 	for i in json_teams['NFLTeams']:
 		team_list.append(team_class.Team(i['code'], i['fullName'], i['shortName']))
+	return team_list

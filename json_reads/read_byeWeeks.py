@@ -8,9 +8,8 @@ def json_read_byeweek(bye_week):
 	r = requests.get(url)
 	json_byeweek = r.json()
 	week = 5
-	while True:
-		for i in json_byeweek['Bye Week ' + str(week)]:
-			bye_week.append(byeweek_class.byeWeek(i['team'], i['byeWeek'], i['displayName']))
+	for i in json_byeweek['Bye Week ' + str(week)]:
+		bye_week.append(i['byeWeek'])
 		week += 1
 		if week == 12:
 			break
